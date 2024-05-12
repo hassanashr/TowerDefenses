@@ -1,0 +1,51 @@
+<RCC>
+    <qresource prefix="/mapAssets">
+        <file>board1.txt</file>
+        <file>Grass.png</file>
+        <file>Resources/Castle.png</file>
+        <file>Resources/tower.png</file>
+        <file>Resources/Wall.png</file>
+    </qresource>
+    <qresource prefix="/enemyAssets">
+        <file>Enemy/attack_1.png</file>
+        <file>Enemy/attack_2.png</file>
+        <file>Enemy/attack_3.png</file>
+        <file>Enemy/attack_4.png</file>
+        <file>Enemy/attack_5.png</file>
+        <file>Enemy/attack_6.png</file>
+        <file>Enemy/attack_7.png</file>
+        <file>Enemy/attack_8.png</file>
+        <file>Enemy/attack_9.png</file>
+        <file>Enemy/attack_10.png</file>
+        <file>Enemy/attack_11.png</file>
+        <file>Enemy/attack_12.png</file>
+        <file>Enemy/baseSprite.png</file>
+        <file>Enemy/die_1.png</file>
+        <file>Enemy/die_2.png</file>
+        <file>Enemy/die_3.png</file>
+        <file>Enemy/die_4.png</file>
+        <file>Enemy/die_5.png</file>
+        <file>Enemy/die_6.png</file>
+        <file>Enemy/die_7.png</file>
+        <file>Enemy/die_8.png</file>
+        <file>Enemy/die_9.png</file>
+        <file>Enemy/die_10.png</file>
+        <file>Enemy/die_11.png</file>
+        <file>Enemy/die_12.png</file>
+        <file>Enemy/die_13.png</file>
+        <file>Enemy/die_14.png</file>
+        <file>Enemy/die_15.png</file>
+        <file>Enemy/die_16.png</file>
+        <file>Enemy/run_1.png</file>
+        <file>Enemy/run_2.png</file>
+        <file>Enemy/run_3.png</file>
+        <file>Enemy/run_4.png</file>
+        <file>Enemy/run_5.png</file>
+        <file>Enemy/run_6.png</file>
+        <file>Enemy/run_7.png</file>
+        <file>Enemy/run_8.png</file>
+        <file>Enemy/run_9.png</file>
+        <file>Enemy/run_10.png</file>
+        <file>Enemy/run_11.png</file>
+    </qresource>
+</RCC>

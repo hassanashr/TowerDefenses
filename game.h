@@ -41,7 +41,7 @@ private:
     QGraphicsView *gameView;
     int data[16][12];
     QGraphicsPixmapItem *mapTile[16][12];
-    int blockPixel = 64;
+    int blockPixel;
     int currentLevel;
     int mapID;
     double gameVolume;

@@ -17,10 +17,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::won(){
+    win_w = new win();
+    setCentralWidget(win_w);
+//add connections
+}
+void MainWindow::lost(){
+    lose_w = new lose();
+    setCentralWidget(lose_w);
+    //add connections
+}
 void MainWindow::on_start_clicked()
 {
-    this->hide();
     game = new Game();
+    setCentralWidget(game);
+    QObject::connect(game,&Game::win,this,&MainWindow::won);
+    QObject::connect(game,&Game::lose,this,&MainWindow::lost);
     game->startLevel(1);
     qDebug() << "After start.";
 }

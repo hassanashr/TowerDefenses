@@ -5,7 +5,7 @@
 Castle::Castle(QGraphicsScene* Scene, Game* game): Structure() {
     parent = game->gameScene;
     parentGame = game;
-    setPixmap(QPixmap(":/mapAssets/Resources/Wall.png").scaled(64, 64));
+    setPixmap(QPixmap(":/mapAssets/Resources/Castle.png").scaled(64, 64));
     setMaxHealth(20);
     setType(1);
     setHealth(getMaxHealth());

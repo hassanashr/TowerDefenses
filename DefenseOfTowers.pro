@@ -20,12 +20,14 @@ SOURCES += \
     game.cpp \
     graph.cpp \
     healthbar.cpp \
+    lose.cpp \
     main.cpp \
     mainwindow.cpp \
     map_designer.cpp \
     settings.cpp \
     structure.cpp \
     timerwidget.cpp \
+    win.cpp \
     worker.cpp
 
 HEADERS += \
@@ -40,17 +42,21 @@ HEADERS += \
     game.h \
     graph.h \
     healthbar.h \
+    lose.h \
     mainwindow.h \
     map_designer.h \
     settings.h \
     structure.h \
     timerwidget.h \
+    win.h \
     worker.h
 
 FORMS += \
+    lose.ui \
     mainwindow.ui \
     map_designer.ui \
-    settings.ui
+    settings.ui \
+    win.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -7,10 +7,10 @@ Game::Game()
 {
     gameScene = new QGraphicsScene();
     gameGraph = new Graph();
-    gameScene->setSceneRect(0, 0, 1024, 768);
-    setFixedSize(1024, 768);
+    gameScene->setSceneRect(0, 0, 768, 1024);
+    setFixedSize(768, 1024);
     setWindowTitle("Clash Of Clans");
-
+    blockPixel = 64;
 }
 
 void Game::createGraph()
@@ -79,11 +79,8 @@ void Game::readData(QString filePath)
         return;
     QTextStream in(&file);
     for (int i = 0; i < 16; i++) {
-        QString line = in.readLine();
-        QStringList numbers = line.split(" & ");
         for (int j = 0; j < 12; j++) {
-
-            data[i][j] = numbers[j].toInt();
+            in >> data[i][j];
         }
     }
 }
@@ -130,7 +127,7 @@ void Game::buildBoard(QString filePath)
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 12; j++) {
             mapTile[i][j] = new QGraphicsPixmapItem(gridTile);
-            mapTile[i][j]->setPos(i * blockPixel, j * blockPixel);
+            mapTile[i][j]->setPos(j * blockPixel, i * blockPixel);
             gameScene->addItem(mapTile[i][j]);
             if (data[i][j] == 1) {
                 Wall *w = new Wall(gameScene);
@@ -143,6 +140,7 @@ void Game::buildBoard(QString filePath)
             } else if (data[i][j] == 3) {
                 Castle *c = new Castle(gameScene, this);
                 c->setPos(j * blockPixel, i * blockPixel);
+                gameScene->addItem(c);
             }
         }
     }

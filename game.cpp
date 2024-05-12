@@ -1,6 +1,7 @@
 #include "game.h"
 #include <QGraphicsScene>
 #include "graph.h"
+#include "Boosters.h"
 
 Game::Game()
 {
@@ -9,6 +10,7 @@ Game::Game()
     gameScene->setSceneRect(0, 0, 1024, 768);
     setFixedSize(1024, 768);
     setWindowTitle("Clash Of Clans");
+
 }
 
 void Game::createGraph()
@@ -77,10 +79,11 @@ void Game::readData(QString filePath)
         return;
     QTextStream in(&file);
     for (int i = 0; i < 16; i++) {
+        QString line = in.readLine();
+        QStringList numbers = line.split(" & ");
         for (int j = 0; j < 12; j++) {
-            QString value;
-            in >> value;
-            data[i][j] = value.toInt();
+
+            data[i][j] = numbers[j].toInt();
         }
     }
 }
@@ -114,6 +117,11 @@ void Game::spawnEnemy()
     spawnedEnemy.append(enemy);
 }
 
+void Game::spawnBooster()
+{
+    //Booster* booster = new Booster(gameScene);
+}
+
 void Game::buildBoard(QString filePath)
 {
     readData(filePath);
@@ -126,15 +134,15 @@ void Game::buildBoard(QString filePath)
             gameScene->addItem(mapTile[i][j]);
             if (data[i][j] == 1) {
                 Wall *w = new Wall(gameScene);
-                w->setPos(i * blockPixel, j * blockPixel);
+                w->setPos(j * blockPixel, i * blockPixel);
                 gameScene->addItem(w);
             } else if (data[i][j] == 2) {
                 Tower *t = new Tower(gameScene, this);
-                t->setPos(i * blockPixel, j * blockPixel);
+                t->setPos(j * blockPixel, i * blockPixel);
                 gameScene->addItem(t);
             } else if (data[i][j] == 3) {
                 Castle *c = new Castle(gameScene, this);
-                c->setPos(i * blockPixel, j * blockPixel);
+                c->setPos(j * blockPixel, i * blockPixel);
             }
         }
     }

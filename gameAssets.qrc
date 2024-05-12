@@ -3,8 +3,9 @@
         <file>board1.txt</file>
         <file>Grass.png</file>
         <file>Resources/Castle.png</file>
-        <file>Resources/tower.png</file>
         <file>Resources/Wall.png</file>
+        <file>Resources/tower.png</file>
+        <file>Resources/t1.png</file>
     </qresource>
     <qresource prefix="/enemyAssets">
         <file>Enemy/attack_1.png</file>

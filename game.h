@@ -58,6 +58,7 @@ private:
 
 public slots:
     void spawnEnemy();
+    void spawnBooster();
 };
 
 #endif // GAME_H

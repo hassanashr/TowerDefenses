@@ -15,13 +15,15 @@
 Tower::Tower(QGraphicsScene* Scene, Game* game):Structure() {
     parent = game->gameScene;
     parentGame = game;
-    setPixmap(QPixmap(":/mapAssets/Resources/tower.png").scaled(64, 64));
+    setPixmap(QPixmap(":/mapAssets/Resources/t1.png").scaled(64, 64));
     setAcceptHoverEvents(true);
+
 
     healthBar = nullptr;
     maxHealth = 20;
     health = maxHealth;
     costOfWalk = 50;
+    qDebug("Tower Created");
 
     setType(3);
 

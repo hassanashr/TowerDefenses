@@ -136,13 +136,19 @@ void Game::buildBoard(QString filePath)
                 Wall *w = new Wall(gameScene);
                 w->setPos(j * blockPixel, i * blockPixel);
                 gameScene->addItem(w);
+                w->setZValue(3);
+
             } else if (data[i][j] == 2) {
                 Tower *t = new Tower(gameScene, this);
                 t->setPos(j * blockPixel, i * blockPixel);
                 gameScene->addItem(t);
+                t->setZValue(3);
+
             } else if (data[i][j] == 3) {
                 Castle *c = new Castle(gameScene, this);
                 c->setPos(j * blockPixel, i * blockPixel);
+                gameScene->addItem(c);
+                c->setZValue(3);
             }
         }
     }
